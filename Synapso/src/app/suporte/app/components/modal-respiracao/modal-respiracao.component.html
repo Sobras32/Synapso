@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="fecharModal()" color="light">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="breathing-container">
+    <div class="breathing-circle"></div>
+    <span class="breathing-text">{{ textoGuia }}</span>
+  </div>
+  <div class="instructions">
+    <p>Acompanhe o círculo com sua respiração.</p>
+  </div>
+</ion-content>

@@ -1,0 +1,119 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">Meu Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Cabeçalho com Avatar -->
+  <div class="profile-header-section">
+    <div class="avatar-wrapper" (click)="refreshAvatar()">
+      <ion-avatar class="large-avatar">
+        <img [src]="user.photoURL || 'https://ui-avatars.com/api/?name=User'" />
+      </ion-avatar>
+      <div class="edit-badge">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </div>
+    </div>
+    <h2 class="profile-name">{{ user.displayName }}</h2>
+    <p class="profile-email">{{ user.email }}</p>
+  </div>
+
+  <!-- Formulário -->
+  <div class="form-section">
+    <ion-card class="form-card">
+      <ion-card-content>
+
+        <ion-list lines="none">
+
+          <!-- Nome -->
+          <div class="input-group">
+            <ion-label>Nome Completo</ion-label>
+            <ion-item class="custom-input">
+              <ion-icon name="person-outline" slot="start"></ion-icon>
+              <ion-input [(ngModel)]="user.displayName" type="text" placeholder="Seu nome"></ion-input>
+            </ion-item>
+          </div>
+
+          <!-- Email -->
+          <div class="input-group">
+            <ion-label>E-mail</ion-label>
+            <ion-item class="custom-input">
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+              <ion-input [(ngModel)]="user.email" type="email" placeholder="email@exemplo.com"></ion-input>
+            </ion-item>
+          </div>
+
+          <!-- Telefone -->
+          <div class="input-group">
+            <ion-label>Telefone</ion-label>
+            <ion-item class="custom-input">
+              <ion-icon name="call-outline" slot="start"></ion-icon>
+              <ion-input [(ngModel)]="user.phone" type="tel" placeholder="(00) 00000-0000"></ion-input>
+            </ion-item>
+          </div>
+
+          <!-- Senha -->
+          <div class="input-group">
+            <ion-label>Nova Senha</ion-label>
+            <ion-item class="custom-input">
+              <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+              <ion-input 
+                [(ngModel)]="newPassword"
+                [type]="showPassword ? 'text' : 'password'"
+                placeholder="Alterar senha (min. 6 caracteres)">
+              </ion-input>
+
+              <ion-buttons slot="end">
+                <ion-button (click)="togglePassword()">
+                  <ion-icon 
+                    [name]="showPassword ? 'eye-off-outline' : 'eye-outline'" 
+                    color="medium">
+                  </ion-icon>
+                </ion-button>
+              </ion-buttons>
+
+            </ion-item>
+          </div>
+
+        </ion-list>
+
+        <div class="actions ion-margin-top">
+          <!-- SALVAR ALTERAÇÕES (verde) -->
+          <ion-button 
+            expand="block" 
+            class="btn-base btn-salvar"
+            (click)="saveProfile()">
+            Salvar Alterações
+          </ion-button>
+        </div>
+
+        <div class="actions ion-margin-top">
+
+          <!-- SAIR DA CONTA (cinza) -->
+          <ion-button 
+            expand="block" 
+            class="btn-base btn-sair"
+            (click)="logout()">
+            Sair da conta
+          </ion-button>
+
+          <!-- EXCLUIR CONTA (vermelho) -->
+          <ion-button 
+            expand="block" 
+            class="btn-base btn-excluir"
+            (click)="confirmDeleteAccount()">
+            Excluir minha conta
+          </ion-button>
+
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

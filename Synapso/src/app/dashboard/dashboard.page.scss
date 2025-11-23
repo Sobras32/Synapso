@@ -1,0 +1,97 @@
+
+.card-registro {
+  margin-bottom: 24px;
+
+}
+.header-toolbar {
+  --background: #3b6978 !important;
+  /* azul escuro */
+  --color: #ffffff !important;
+  /* texto branco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 65px;
+}
+.header-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+.profile-avatar-small {
+  width: 32px;
+  height: 32px;
+  
+  min-width: 32px;  
+  min-height: 32px;
+  
+  --border-radius: 50%; 
+  border-radius: 50%;   
+  
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;  
+}
+.ion-margin-top{
+  --background: aliceblue;
+  color: black;
+}
+
+.analysis-section {
+  ion-label{
+    color: aliceblue;
+  }
+  ion-item-divider {
+    --background: transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 0;
+    margin-top: 16px;
+  }
+  
+  ion-segment {
+    margin: 16px 0;
+  }
+}
+
+.kpi-card {
+  text-align: center;
+  background: var(--ion-color-light);
+
+  .kpi-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+    line-height: 1;
+  }
+  
+  .kpi-label {
+    font-size: 1rem;
+    color: var(--ion-color-medium-shade);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--ion-color-medium);
+  margin-top: 4rem;
+
+  ion-icon {
+    font-size: 4rem;
+  }
+  p { margin: 4px 0; }
+}
+
+// Garante que os cards tenham um espaçamento
+ion-card {
+  margin-left: 0;
+  margin-right: 0;
+}

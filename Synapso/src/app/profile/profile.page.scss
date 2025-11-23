@@ -1,0 +1,157 @@
+// Importa fonte se não estiver no global.scss
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+:host {
+  --synapso-bg-light: #f4f7f6;
+  --synapso-blue-dark: #3b6978;
+  --synapso-blue-light: #a8d0e6;
+  --synapso-green-soft: #84a98c;
+}
+
+ion-content {
+  --background: var(--synapso-bg-light);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* --- Header --- */
+.header-toolbar {
+  --background: var(--synapso-blue-dark);
+  --color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+/* --- Topo com Avatar --- */
+.profile-header-section {
+  background: linear-gradient(180deg, var(--synapso-blue-dark) 0%, var(--synapso-bg-light) 90%);
+  padding: 30px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.large-avatar {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.edit-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--synapso-green-soft);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-name {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.profile-email {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+}
+
+/* --- Formulário --- */
+.form-section {
+  padding: 0 16px 40px;
+  margin-top: -40px;
+}
+
+.form-card {
+  --background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.input-group {
+  margin-bottom: 15px;
+
+  ion-label {
+    color: var(--synapso-blue-dark);
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    display: block;
+  }
+}
+
+/* --- Inputs --- */
+.custom-input {
+  --background: #f9f9f9;
+  --border-radius: 12px;
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  --min-height: 50px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  
+  ion-icon {
+    color: var(--synapso-green-soft);
+    margin-right: 10px;
+  }
+}
+
+/* ------------------------------
+      BOTÕES PADRONIZADOS
+------------------------------ */
+
+.btn-base {
+  --border-radius: 30px;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 1.1em;
+  height: 50px;
+  margin-top: 15px;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+/* Verde — SALVAR */
+.btn-salvar {
+  --background: var(--synapso-green-soft);
+  --color: #ffffff;
+  box-shadow: 0 8px 15px rgba(132, 169, 140, 0.3);
+}
+
+/* Cinza — SAIR */
+.btn-sair {
+  --background: #b8b8b8;
+  --color: #ffffff;
+  box-shadow: 0 8px 15px rgba(180, 180, 180, 0.25);
+}
+
+/* Vermelho — EXCLUIR */
+.btn-excluir {
+  --background: #d9534f;
+  --color: #ffffff;
+  box-shadow: 0 8px 15px rgba(217, 83, 79, 0.3);
+}

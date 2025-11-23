@@ -1,0 +1,55 @@
+<ion-header>
+</ion-header>
+<ion-content>
+
+  <div class="login-container">
+
+    <div class="login-card">
+      
+      <div class="illustration-container">
+        <img src="assets/foto.svg" alt="Ilustração de bem-estar e tranquilidade">
+      </div>
+      
+      <div class="form-container">
+        
+        <div class="header-text">
+          <h2>Seja Bem-vindo(a)!</h2>
+          <p>Seu espaço seguro te aguarda.</p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+             <small>Por favor, insira um e-mail válido.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+           <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+             <small>A senha precisa ter no mínimo 6 caracteres.</small>
+          </div>
+
+          <ion-button (click)="login()" type="submit" expand="block" class="login-main-button" [disabled]="loginForm.invalid">
+            Entrar
+          </ion-button>
+        </form>
+
+        <div class="footer-links">
+          <a routerLink="/esqueci-senha" class="forgot-link">Esqueceu a senha?</a> 
+  
+          <p class="signup-link">
+            Não tem uma conta? 
+          <a routerLink="/cadastro">Crie aqui</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

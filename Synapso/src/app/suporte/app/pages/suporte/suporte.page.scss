@@ -1,0 +1,171 @@
+/* ============================
+   TEMA "SAFE HAVEN" (REFÚGIO SEGURO)
+   ============================ */
+
+:host {
+  --fundo-pagina: #F8F9FA;
+  --fundo-card: #FFFFFF;
+  --texto-titulo: #2c3e50;
+  --texto-corpo: #5a6a79;
+  --cor-emergencia: #e74c3c;
+  --sombra-suave: 0 4px 16px rgba(44, 62, 80, 0.08);
+}
+.header-toolbar {
+  --background: #3b6978 !important;
+  /* azul escuro */
+  --color: #ffffff !important;
+  /* texto branco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 65px;
+}
+.header-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+.safe-header {
+  --background: var(--fundo-card);
+  --color: var(--texto-titulo);
+  box-shadow: var(--sombra-suave);
+  
+  ion-title {
+    font-weight: 600;
+  }
+}
+
+ion-content {
+  --background: var(--fundo-pagina);
+}
+
+.header-greeting {
+  padding: 24px 20px;
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--texto-titulo);
+    margin: 0 0 4px 0;
+  }
+  p {
+    font-size: 1rem;
+    color: var(--texto-corpo);
+    margin: 0;
+  }
+}
+
+/* 2. Botão de Emergência */
+.emergency-cta {
+  padding: 0 16px 16px 16px;
+  ion-button {
+    --background: var(--cor-emergencia);
+    --background-activated: #c0392b;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+    font-weight: 600;
+    height: 50px;
+    text-transform: none;
+  }
+}
+
+/* 3. Ferramentas Interativas */
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 16px;
+
+  .grid-title {
+    grid-column: 1 / -1; // Ocupa a linha toda
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-corpo);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* * ATUALIZAÇÃO FEITA AQUI 
+ * (Este é o bloco .tool-button corrigido e atualizado para <img>) 
+ */
+.tool-button {
+  background: var(--fundo-card);
+  border-radius: 16px;
+  box-shadow: var(--sombra-suave);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  .tool-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    /* ATUALIZAÇÃO: Adicionado estilo para <img> (PNG) */
+    img.tool-img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+  }
+
+  /* Fundos mais suaves usando as cores do tema */
+  #respira-icon {
+    background: var(--ion-color-success-tint); 
+  }
+  #ancora-icon {
+    background: var(--ion-color-primary-tint);
+  }
+
+  ion-label {
+    color: var(--texto-titulo);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+/* 4. Seção do Plano */
+.plan-section {
+  background: var(--fundo-card);
+  margin: 24px 16px;
+  border-radius: 16px;
+  box-shadow: var(--sombra-suave);
+  padding: 24px;
+  text-align: center;
+  
+  ion-icon[name="shield-checkmark-outline"] {
+    font-size: 2.5rem;
+    color: var(--ion-color-primary);
+  }
+
+  h3 {
+    color: var(--texto-titulo);
+    font-weight: 700;
+    margin: 12px 0 8px 0;
+  }
+  
+  p {
+    color: var(--texto-corpo);
+    margin: 0 0 16px 0;
+  }
+}
+
+/* * SUAS MUDANÇAS (MANTIDAS)
+ */
+.plano{
+  margin-left: -23px;
+}
+
+.plano-titulo{
+  margin-top: -50px;
+}

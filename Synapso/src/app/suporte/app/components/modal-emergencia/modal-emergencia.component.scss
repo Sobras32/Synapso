@@ -1,0 +1,30 @@
+/* FORÇA O FUNDO BRANCO E TEXTO PRETO */
+ion-toolbar {
+  --background: #f8f8f8; // Fundo do topo
+  --color: #000; // Força o título "Ajuda Urgente" a ser preto
+}
+
+ion-content {
+  --background: #ffffff; // Força o fundo do modal a ser branco
+  --color: #333; // Força todo o texto padrão a ser escuro
+}
+
+/* Garante que o parágrafo de texto seja escuro */
+p {
+  color: #333;
+}
+/* ---------------------------------- */
+
+.btn-cvv {
+  --background: #ffc107; // Amarelo
+  --color: #000;
+  height: 50px;
+  font-weight: 600;
+}
+.btn-samu {
+  --background: #dc3545; // Vermelho
+  --color: #ffffff;
+  height: 50px;
+  font-weight: 600;
+  margin-top: 10px;
+}

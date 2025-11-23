@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="login-container">
+
+    <div class="login-card">
+      
+      <div class="illustration-container">
+        <img src="assets/foto.svg" alt="Ilustração de recuperação de senha">
+      </div>
+      
+      <div class="form-container">
+
+        <div class="header-text">
+          <h2>Recuperar Senha</h2>
+          <p>Digite seu e-mail e enviaremos um link para redefinir sua senha.</p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="enviarEmail()">
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+            <small>Digite um e-mail válido.</small>
+          </div>
+
+          <ion-button 
+            type="submit"
+            expand="block" 
+            class="login-main-button"
+            [disabled]="form.invalid">
+            Enviar Link
+          </ion-button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

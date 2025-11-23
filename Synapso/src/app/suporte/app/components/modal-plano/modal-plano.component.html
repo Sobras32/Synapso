@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Plano de Cuidado</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="fecharModal()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="salvarPlano()" [strong]="true">Salvar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3>Meu Plano de Cuidado Pessoal</h3>
+  <p>Preencha isto quando estiver bem, para usar quando precisar.</p>
+
+  <ion-item>
+    <ion-label position="stacked">1. Pessoas de confiança (amigos, família)</ion-label>
+    <ion-textarea [(ngModel)]="plano.pessoasContato" placeholder="Ex: Mãe, Pai, Irmãos"></ion-textarea>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">2. Atividades que me acalmam</ion-label>
+    <ion-textarea [(ngModel)]="plano.coisasAcalmam" placeholder="Ex: Ouvir música, tomar um chá, caminhar"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">3. Sinais de que uma crise está começando</ion-label>
+    <ion-textarea [(ngModel)]="plano.sinaisCrise" placeholder="Ex: Coração acelerado, mãos suando, querer me isolar"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">4. Lembretes positivos sobre mim</ion-label>
+    <ion-textarea [(ngModel)]="plano.lembretesPositivos" placeholder="Ex: Eu sou forte, isso vai passar"></ion-textarea>
+  </ion-item>
+</ion-content>

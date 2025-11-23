@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+
+    <div class="login-card">
+
+      <div class="illustration-container">
+        <img src="assets/adm.png" alt="Ilustração de bem-estar e tranquilidade">
+      </div>
+
+      <div class="form-container">
+
+        <div class="header-text">
+          <h2>Login de Administrador</h2>
+          <p>Por favor, insira suas credenciais.</p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+            <small>Por favor, insira um e-mail válido.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+            <small>A senha precisa ter no mínimo 6 caracteres.</small>
+          </div>
+
+          <ion-button type="submit" expand="block" class="login-main-button" [disabled]="loginForm.invalid">
+            Entrar
+          </ion-button>
+        </form>
+
+        <div class="footer-links">
+          <a href="#" class="forgot-link">Esqueceu a senha?</a>
+
+          <p class="admin-link-container">
+            <a href="/novo-login" class="forgot-link">
+              Voltar ao login de usuário
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

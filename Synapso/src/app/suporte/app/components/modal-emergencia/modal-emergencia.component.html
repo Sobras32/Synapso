@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajuda Urgente</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <p>Se você está em crise, por favor, ligue para um destes serviços gratuitos. Você não está sozinho(a).</p>
+  
+  <ion-button expand="block" (click)="ligarCVV()" class="btn-cvv">
+    <ion-icon slot="start" name="call"></ion-icon>
+    Ligar para CVV (188)
+  </ion-button>
+  
+  <ion-button expand="block" (click)="ligarSAMU()" class="btn-samu">
+    <ion-icon slot="start" name="medkit"></ion-icon>
+    Ligar para SAMU (192)
+  </ion-button>
+</ion-content>

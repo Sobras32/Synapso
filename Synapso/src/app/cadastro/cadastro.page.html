@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+  <div class="register-container">
+    <div class="register-card">
+      <div class="illustration-container">
+        <img src="assets/thinking.svg" alt="Ilustração para tela de cadastro">
+      </div>
+      
+      <div class="form-container">
+        <div class="header-text">
+          <h2>Crie sua Conta</h2>
+          <p>Comece sua jornada de bem-estar.</p>
+        </div>
+
+        <form #registerForm="ngForm" (ngSubmit)="register()">
+          
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Nome Completo</ion-label>
+            <ion-input type="text" [(ngModel)]="credentials.name" name="name" #nameInput="ngModel" required></ion-input>
+          </ion-item>
+          <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="error-message">
+            <small>O nome é obrigatório.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Como podemos te chamar?</ion-label>
+            <ion-input type="text" [(ngModel)]="credentials.nickname" name="nickname" #nicknameInput="ngModel" required></ion-input>
+          </ion-item>
+          <div *ngIf="nicknameInput.invalid && (nicknameInput.dirty || nicknameInput.touched)" class="error-message">
+            <small>Este campo é obrigatório.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Data de Nascimento</ion-label>
+            <input
+              type="date"
+              class="native-date-input" [(ngModel)]="credentials.birthdate"
+              name="birthdate"
+              #birthdateInput="ngModel"
+              required
+            />
+            <ion-icon slot="end" name="calendar-outline" class="date-icon"></ion-icon>
+          </ion-item>
+          <div *ngIf="birthdateInput.invalid && (birthdateInput.dirty || birthdateInput.touched)" class="error-message">
+            <small>A data de nascimento é obrigatória.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Telefone (só números)</ion-label>
+            <ion-input
+              type="tel"
+              inputmode="numeric"
+              [(ngModel)]="credentials.phone"
+              (ionInput)="onPhoneInput($event)"
+              name="phone"
+              #phoneInput="ngModel"
+              required
+              maxlength="11">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="phoneInput.invalid && (phoneInput.dirty || phoneInput.touched)" class="error-message">
+            <small>O telefone é obrigatório (11 dígitos).</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" [(ngModel)]="credentials.email" name="email" #emailInput="ngModel" required email></ion-input>
+          </ion-item>
+          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+            <small>Por favor, insira um e-mail válido.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="credentials.password" name="password" #passwordInput="ngModel" required minlength="6"></ion-input>
+          </ion-item>
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error-message">
+            <small>A senha precisa ter no mínimo 6 caracteres.</small>
+          </div>
+
+          <ion-item class="input-field" lines="none">
+            <ion-label position="floating">Confirmar Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="credentials.confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel" required></ion-input>
+          </ion-item>
+          <div *ngIf="passwordsDoNotMatch" class="error-message">
+            <small>As senhas não coincidem.</small>
+          </div>
+
+          <ion-button type="submit" expand="block" class="register-main-button" [disabled]="registerForm.invalid">
+            Cadastrar
+          </ion-button>
+        </form>
+
+        <div class="footer-links">
+          <p class="login-link">Já tem uma conta? <a href="/login">Faça o login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

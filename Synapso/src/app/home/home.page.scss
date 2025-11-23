@@ -1,0 +1,310 @@
+/*
+ * Arquivo: home.page.scss (versão corrigida, só cores)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+:root {
+  --synapso-bg-light: #f4f7f6;
+  --synapso-blue-dark: #3b6978;
+  --synapso-blue-light: #a8d0e6;
+  --synapso-green-soft: #84a98c;
+  --synapso-text-primary: #333333;
+  --synapso-text-secondary: #666666;
+}
+
+/* força modo claro */
+html {
+  color-scheme: light !important;
+}
+
+ion-content {
+  --background: var(--synapso-bg-light);
+  --color: var(--synapso-text-primary);
+  font-family: 'Nunito', sans-serif;
+}
+/* Cabeçalho simplificado e legível */
+.header-toolbar {
+  --background: #3b6978 !important;
+  /* azul escuro */
+  --color: #ffffff !important;
+  /* texto branco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 65px;
+}
+
+.header-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
+.login-button {
+  --background: transparent;
+  --color: #ffffff;
+  font-weight: 800;
+  font-size: 1em;
+  text-transform: none;
+  border: none;
+  box-shadow: none;
+  padding: 0 10px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.profile-avatar-small {
+  width: 32px;
+  height: 32px;
+  
+  min-width: 32px;  
+  min-height: 32px;
+  
+  --border-radius: 50%; 
+  border-radius: 50%;   
+  
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;  
+}
+.register-button {
+  --background: #ffffff !important;
+  --color: var(--synapso-blue-dark) !important;
+  background: #ffffff !important;
+  color: var(--synapso-blue-dark) !important;
+  --background-activated: #e3e9ec !important;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+
+/* --- Seção de Ações Rápidas --- */
+.quick-actions-section {
+  padding: 20px 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.action-card {
+  border-radius: 15px;
+  border: 1px solid #eee;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  color: var(--synapso-blue-dark);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  }
+
+  ion-icon {
+    font-size: 2.5em;
+    color: var(--synapso-green-soft);
+  }
+
+  span {
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 0.95em;
+    line-height: 1.4;
+  }
+}
+
+/* --- Hero --- */
+.hero-section {
+  background: linear-gradient(180deg, #676868 0%, var(--synapso-bg-light) 100%);
+  padding: 60px 20px 40px;
+  color: var(--synapso-text-primary);
+}
+
+.hero-title {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: var(--synapso-blue-dark);
+  line-height: 1.3;
+  margin-bottom: 20px;
+  margin-top: -12px;
+}
+
+.hero-subtitle {
+  font-size: 1.15em;
+  color: var(--synapso-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-cta-button {
+  --background: var(--synapso-green-soft) !important;
+  --color: #353535 !important;
+  background: var(--synapso-green-soft) !important;
+  color: #000000 !important;
+  --background-activated: #00ee30;
+  --padding-start: 35px;
+  --padding-end: 35px;
+  height: 55px;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: none;
+  --box-shadow: 0 8px 15px rgba(132, 169, 140, 0.3);
+
+  ion-icon {
+    font-size: 1.4em;
+    margin-left: 8px;
+  }
+}
+
+/* --- Features --- */
+.features-section {
+  padding: 40px 20px;
+  background: var(--synapso-bg-light);
+}
+
+.section-title {
+  color: var(--synapso-blue-dark);
+  font-weight: 800;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  margin-top: -40px;
+}
+
+.feature-card {
+  --background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--synapso-text-secondary);
+}
+
+.feature-card ion-card-header {
+  padding-bottom: 10px;
+  color: var(--synapso-text-primary);
+}
+
+.feature-card ion-card-title {
+  font-weight: 700;
+  color: var(--synapso-blue-dark);
+  font-size: 1.2em;
+}
+
+.feature-card ion-card-content {
+  color: var(--synapso-text-secondary);
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.feature-icon {
+  font-size: 3.5em;
+  color: var(--synapso-green-soft) !important;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+
+/* --- Quote --- */
+.quote-section {
+  background: var(--synapso-blue-light);
+  padding: 60px 20px;
+}
+
+.quote-text {
+  font-size: 1em;
+  font-style: italic;
+  color: var(--synapso-blue-dark);
+  line-height: 1.6;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: -55px;
+  margin-bottom: -20px;
+}
+
+/* --- Footer --- */
+.footer-toolbar {
+  --background: #ffffff !important;
+  --color: #000000 !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+
+  p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+    color: #000000 !important;
+  }
+}
+
+.footer-links {
+  margin-top: 10px;
+
+  a {
+    color: #000000 !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin: 0 10px;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  span {
+    opacity: 0.7;
+    color: #000000 !important;
+  }
+}
+
+/* --- Correção geral pra garantir --- */
+ion-toolbar.header-toolbar,
+ion-header .header-toolbar {
+  background: var(--synapso-blue-dark) !important;
+  color: #ffffff !important;
+}
+
+ion-toolbar.header-toolbar ion-title,
+ion-toolbar.header-toolbar ion-button {
+  color: #ffffff !important;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 2px solid var(--synapso-blue-light);
+  cursor: pointer;
+}

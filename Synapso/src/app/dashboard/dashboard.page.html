@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar class="header-toolbar">
+
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" color=""></ion-back-button>
+      </ion-buttons>
+
+      <ion-title class="header-title">
+        Synapso
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card class="card-registro">
+    <ion-card-header>
+      <ion-card-title>Como você está agora?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="mood-selector ion-text-center">
+        <ion-button *ngFor="let mood of moodOptions" (click)="selectMood(mood)" fill="clear"
+          [class.selected]="mood.value === selectedMood?.value">
+          <span class="emoji-button">{{ mood.emoji }}</span>
+        </ion-button>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Adicionar um comentário...</ion-label>
+        <ion-textarea [(ngModel)]="comment" rows="2"></ion-textarea>
+      </ion-item>
+      <ion-button expand="block" (click)="saveEntry()" [disabled]="!selectedMood" class="ion-margin-top">
+        Registrar Humor
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="analysis-section">
+    <ion-item-divider>
+      <ion-label>Sua Análise de Humor</ion-label>
+    </ion-item-divider>
+
+    <ion-segment [value]="selectedPeriod" (ionChange)="onPeriodChange($event)">
+      <ion-segment-button value="7">
+        <ion-label>7 Dias</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="30">
+        <ion-label>30 Dias</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="90">
+        <ion-label>90 Dias</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div *ngIf="history.length > 0; else noData">
+      <ion-card class="kpi-card">
+        <ion-card-header>
+          <ion-card-subtitle>Média de Humor</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="kpi-value">{{ analyticsData?.averageScore }}%</div>
+          <div class="kpi-label">Positividade</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Distribuição de Humor (%)</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #distributionChart></canvas>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Linha do Tempo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #timelineChart></canvas>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ng-template #noData>
+      <div class="empty-state">
+        <ion-icon name="analytics-outline"></ion-icon>
+        <p>Comece a registrar seu humor para ver suas análises aqui.</p>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>

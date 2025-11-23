@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Desafios do Dia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="progress-card">
+    <ion-card-header>
+      <ion-card-title>Seu Progresso</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="progress-label">
+        <strong>{{ getDesafiosConcluidos() }}</strong> de 
+        <strong>{{ desafiosDiarios.length }}</strong> desafios concluídos
+      </div>
+      <ion-progress-bar 
+        [value]="calcularProgresso()" 
+        [color]="getCorProgresso()">
+      </ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="calcularProgresso() === 1" class="celebration-card">
+    <ion-card-content>
+      <ion-icon name="sparkles-outline"></ion-icon>
+      <h2>Parabéns!</h2>
+      <p>Você completou todos os desafios de hoje. Orgulhe-se do seu esforço!</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <div *ngIf="calcularProgresso() < 1">
+    <ng-container *ngFor="let categoria of categorias">
+      <ion-list-header class="categoria-header">{{ categoria }}</ion-list-header>
+      
+      <ion-list class="desafio-list">
+        <ng-container *ngFor="let desafio of desafiosDiarios">
+          <ion-item *ngIf="desafio.categoria === categoria" 
+                    class="desafio-item" 
+                    lines="none">
+            
+            <ion-checkbox slot="start" 
+                          [(ngModel)]="desafio.concluido"
+                          (ionChange)="salvarDesafiosNoStorage()">
+            </ion-checkbox>
+            
+            <ion-icon [name]="desafio.icone" slot="start" color="primary"></ion-icon>
+
+            <ion-label [class.concluido]="desafio.concluido">
+              <h2>{{ desafio.titulo }}</h2>
+              <p>{{ desafio.descricao }}</p>
+            </ion-label>
+
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </ng-container>
+  </div>
+</ion-content>

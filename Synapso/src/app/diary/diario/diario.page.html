@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-toolbar">
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color=""></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title class="header-title">Synapso</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="auth.isLoggedIn | async" (click)="goToProfile()" fill="clear">
+        <ion-avatar slot="icon-only" class="profile-avatar-small">
+          <img [src]="auth.user?.photoURL || 'https://ui-avatars.com/api/?name=' + (auth.user?.displayName || 'User') + '&background=random&color=fff'" />
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-datetime 
+    presentation="date" 
+    [value]="dataSelecionada" 
+    (ionChange)="onDataChange($event)"
+    [showDefaultTitle]="true" 
+    locale="pt-BR"
+    [highlightedDates]="diasDestacados">
+  </ion-datetime>
+
+  <ion-card class="editor-card">
+    <ion-card-header>
+      <ion-card-title>
+        {{ dataSelecionada | date: 'longDate': 'pt-BR' }}
+      </ion-card-title>
+      <ion-card-subtitle>Como você está se sentindo?</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-segment 
+        scrollable="true" 
+        class="seletor-humor" 
+        [value]="humorAtual"
+        (ionChange)="onHumorChange($event)">
+
+        <ion-segment-button *ngFor="let humor of humores" [value]="humor.nome" layout="icon-top">
+          <ion-icon [name]="humor.icone" [style.color]="humor.cor"></ion-icon>
+          <ion-label>{{ humor.nome }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-textarea 
+        class="area-diario" 
+        placeholder="Conte mais sobre o seu dia..." 
+        [autoGrow]="true" rows="5"
+        [value]="textoAtual"
+        (ionInput)="onTextoChange($event)">
+      </ion-textarea>
+
+      <ion-button 
+        expand="block" 
+        fill="outline" 
+        routerLink="/diario-lista" 
+        class="botao-visualizar">
+        <ion-icon slot="start" name="eye-outline"></ion-icon>
+        Visualizar Diários Passados
+      </ion-button>
+
+      <ion-button 
+        expand="block" 
+        (click)="salvarEntrada()" 
+        class="botao-salvar">
+        Salvar no Diário
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,89 @@
+// Container principal para centralizar e adicionar espaçamento
+.container {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header-toolbar {
+  --background: #3b6978 !important;
+  /* azul escuro */
+  --color: #ffffff !important;
+  /* texto branco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 65px;
+}
+.header-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+// Estilo do cabeçalho da página com o logo
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+
+  ion-icon {
+    font-size: 48px;
+    color: #3b6978 !important;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: #3b6978 !important;
+  }
+}
+
+// Títulos dos cards
+ion-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ion-color-dark);
+}
+
+// Parágrafos dentro dos cards
+ion-card-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ion-color-medium-shade);
+  text-align: justify;
+}
+
+// Ajustes na lista da equipe
+ion-list {
+  background: transparent; // Remove o fundo branco padrão da lista
+}
+
+ion-item {
+  --background: transparent; // Remove o fundo branco padrão dos itens
+}
+
+// Ícone usado como avatar
+.avatar-icon {
+  font-size: 40px;
+  color: var(--ion-color-medium);
+}
+
+// Rótulo do item da lista (Nome e Função)
+ion-label {
+  h2 {
+    font-weight: 600;
+  }
+  p {
+    color: var(--ion-color-primary);
+    font-weight: 500;
+  }
+}
+
+// Divisor da lista
+ion-item-divider {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}

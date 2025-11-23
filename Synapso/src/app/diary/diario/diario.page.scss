@@ -1,0 +1,147 @@
+/* Aplicando a paleta Verde Sálvia */
+:host {
+  /* Fundo da Página */
+  --ion-background-color: #F9F9F9;
+
+  /* Cor de Texto Padrão */
+  --ion-text-color: #333333;
+  --ion-text-color-secondary: #A8A3A1;
+
+  /* Cor de Destaque (Verde Sálvia) */
+  --ion-color-primary: #E5A88C;
+  --ion-color-primary-rgb: 178, 194, 177;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #c9937b;
+  --ion-color-primary-tint: #e7b098;
+}
+
+.header-toolbar {
+  --background: #3b6978 !important;
+  /* azul escuro */
+  --color: #ffffff !important;
+  /* texto branco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 65px;
+}
+.header-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+.profile-avatar-small {
+  width: 32px;
+  height: 32px;
+  
+  min-width: 32px;  
+  min-height: 32px;
+  
+  --border-radius: 50%; 
+  border-radius: 50%;   
+  
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;  
+}
+/* Estilizando o Calendário */
+ion-datetime {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+
+  --background: var(--ion-background-color);
+  margin-top: 5px;
+
+  /* Cor do dia selecionado */
+  .datetime-day[data-selected="true"] {
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    border-radius: 8px;
+  }
+  
+  /* Cor do dia "hoje" */
+  .datetime-day[data-today="true"] {
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 8px;
+  }
+}
+
+/* Estilizando o Card de Edição */
+.editor-card {
+  --background: #FFFFFF;
+  margin: 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+ion-card-title {
+  font-weight: 700;
+  color: var(--ion-text-color);
+}
+
+ion-card-subtitle {
+  color: var(--ion-text-color-secondary);
+  padding-top: 4px;
+}
+
+/* Estilizando o Seletor de Humor */
+.seletor-humor {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  ion-segment-button {
+    --background: #F9F9F9;
+    --background-checked: var(--ion-color-primary-tint);
+    --color: var(--ion-text-color-secondary);
+    --color-checked: #333333;
+    --indicator-color: transparent;
+    border-radius: 8px;
+    margin: 0 4px;
+  }
+}
+
+/* Estilizando o Textarea */
+.area-diario {
+  background-color: #F9F9F9;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--ion-text-color);
+  --placeholder-color: var(--ion-text-color-secondary);
+}
+
+/* Botão Salvar (Cor Principal) */
+.botao-salvar {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --color: var(--ion-color-primary-contrast);
+  font-weight: 600;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Botão Visualizar (Contorno da Cor Principal) */
+.botao-visualizar {
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+  font-weight: 600;
+  margin-top: 20px;
+  border-radius: 10px;
+
+  ion-icon {
+    margin-right: 8px;
+  }
+}

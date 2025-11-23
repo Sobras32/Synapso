@@ -1,0 +1,51 @@
+:host {
+  --background-blue: #3498db; // Azul calmo
+  --text-white: #ffffff;
+}
+
+/* Força o fundo do modal inteiro */
+ion-content {
+  --background: var(--background-blue);
+}
+
+/* O RESTO DO CÓDIGO PERMANECE O MESMO */
+.breathing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+}
+
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.breathing-text {
+  position: absolute;
+  color: var(--text-white);
+  font-size: 1.5rem;
+  font-weight: 300;
+  z-index: 5;
+  transition: opacity 0.5s;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+@keyframes breathe {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0.8); }
+}

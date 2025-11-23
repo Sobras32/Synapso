@@ -1,0 +1,145 @@
+/* Em: src/app/desafios/desafios.page.scss */
+
+:host {
+  // --- Paleta de Cores Suaves ---
+  --synapso-primary: #3a7c8a;
+  --synapso-primary-tint: #e1f0f3;
+  --synapso-success: #2f9c7a; // Verde sucesso
+  --synapso-warning: #f3b64c; // Amarelo aviso
+  --synapso-background: #f8f9fa;
+  --synapso-text: #343a40;
+  --synapso-text-light: #6c757d;
+}
+
+ion-content {
+  --background: var(--synapso-background);
+}
+
+ion-toolbar {
+  --background: var(--synapso-primary);
+  --color: #ffffff;
+}
+
+/* * ============================================
+ * ESTILO DO PROGRESSO (NOVO)
+ * ============================================
+ */
+.progress-card {
+  margin: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  
+  ion-card-title {
+    color: var(--synapso-primary);
+    font-weight: 600;
+  }
+  
+  .progress-label {
+    font-size: 0.9em;
+    color: var(--synapso-text-light);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  // Deixa a barra de progresso mais grossa e arredondada
+  ion-progress-bar {
+    height: 12px;
+    border-radius: 6px;
+    // Define as cores
+    --progress-background: var(--synapso-primary-tint);
+    &[color="primary"] { --background: var(--synapso-primary); }
+    &[color="success"] { --background: var(--synapso-success); }
+    &[color="warning"] { --background: var(--synapso-warning); }
+  }
+}
+
+/* * ============================================
+ * ESTILO DA CELEBRAÇÃO (NOVO)
+ * ============================================
+ */
+.celebration-card {
+  margin: 16px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(47, 156, 122, 0.2); // Sombra verde
+  background: linear-gradient(135deg, var(--synapso-success), #5ce0b8);
+  color: #ffffff;
+  
+  ion-icon {
+    font-size: 3em;
+    margin-bottom: -10px; // Puxa o texto para perto
+  }
+  h2 {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  p {
+    opacity: 0.9;
+    font-size: 0.9em;
+  }
+}
+
+/* * ============================================
+ * ESTILO DA LISTA DE DESAFIOS (ATUALIZADO)
+ * ============================================
+ */
+.categoria-header {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--synapso-primary);
+  padding-left: 16px;
+  margin-top: 16px;
+}
+
+.desafio-list {
+  background: transparent;
+  padding: 0 10px;
+}
+
+.desafio-item {
+  --background: #ffffff;
+  --border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  
+  ion-icon {
+    margin-right: 8px;
+    font-size: 1.4em;
+    color: var(--synapso-primary);
+  }
+
+  ion-label h2 {
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--synapso-text);
+    transition: color 0.3s ease;
+  }
+  ion-label p {
+    font-size: 0.85em;
+    color: var(--synapso-text-light);
+    white-space: normal;
+    transition: color 0.3s ease;
+  }
+
+  ion-checkbox {
+    --background-checked: var(--synapso-success); // Checkbox verde
+    --border-color-checked: var(--synapso-success);
+    margin-right: 12px;
+  }
+  
+  /* * A "MÁGICA" INTERATIVA DO TEXTO RISCADO (NOVO)
+   */
+  ion-label.concluido {
+    h2, p {
+      text-decoration: line-through;
+      color: var(--synapso-text-light);
+      opacity: 0.7;
+    }
+    
+    // Deixa o ícone mais apagado também
+    + ion-icon { // (Seletor CSS para o "próximo irmão")
+      opacity: 0.5;
+    }
+  }
+}

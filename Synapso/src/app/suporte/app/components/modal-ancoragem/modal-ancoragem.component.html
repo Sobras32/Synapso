@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Técnica 5-4-3-2-1</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container 
+  pagination="true" 
+  pagination-clickable="true" 
+  (slidechange)="onSlideChange($event)">
+    
+    <swiper-slide class="slide-5">
+      <div class="slide-content">
+        <ion-icon name="eye-outline"></ion-icon>
+        <h2>5 COISAS QUE VOCÊ VÊ</h2>
+        <p>Olhe ao seu redor e nomeie 5 coisas que você pode ver.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="slide-4">
+      <div class="slide-content">
+        <ion-icon name="hand-right-outline"></ion-icon>
+        <h2>4 COISAS QUE VOCÊ SENTE</h2>
+        <p>Perceba 4 texturas ou sensações que você pode tocar.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="slide-3">
+      <div class="slide-content">
+        <ion-icon name="headset-outline"></ion-icon>
+        <h2>3 COISAS QUE VOCÊ OUVE</h2>
+        <p>Pause e identifique 3 sons diferentes no ambiente.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="slide-2">
+      <div class="slide-content">
+        <ion-icon name="fast-food-outline"></ion-icon>
+        <h2>2 COISAS QUE VOCÊ CHEIRA</h2>
+        <p>Concentre-se e sinta 2 cheiros diferentes.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="slide-1">
+      <div class="slide-content">
+        <ion-icon name="cafe-outline"></ion-icon>
+        <h2>1 COISA QUE VOCÊ SABOREIA</h2>
+        <p>Perceba 1 sabor, pode ser o gosto em sua boca.</p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="slide-final">
+      <div class="slide-content">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <h2>Concluído</h2>
+        <p>Você está no aqui e agora.</p>
+        <ion-button (click)="fecharModal()">Finalizar</ion-button>
+      </div>
+    </swiper-slide>
+
+  </swiper-container>
+</ion-content>

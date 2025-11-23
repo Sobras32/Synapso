@@ -1,0 +1,156 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="header-toolbar">
+      <ion-title class="header-title">
+        Synapso
+      </ion-title>
+
+      <ion-buttons slot="end">
+
+        <ion-button *ngIf="!(auth.isLoggedIn | async)" (click)="goToLogin()" fill="outline" color="light" class="login-button">
+          Login
+        </ion-button>
+
+        <ion-button *ngIf="auth.isLoggedIn | async" (click)="goToProfile()" fill="clear">
+          <ion-avatar slot="icon-only" class="profile-avatar-small">
+            <img [src]="auth.user?.photoURL || 'https://ui-avatars.com/api/?name=' + (auth.user?.displayName || 'User') + '&background=random&color=fff'" />
+          </ion-avatar>
+        </ion-button>
+
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  <div class="quick-actions-section">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-align-items-stretch">
+
+        <ion-col size="12" size-md="4">
+          <a routerLink="/dashboard" class="action-card">
+            <ion-icon name="apps-outline"></ion-icon>
+            <span>Como está seu humor hoje?</span>
+          </a>
+        </ion-col>
+
+        <ion-col size="12" size-md="3">
+          <a routerLink="/diario" class="action-card">
+            <ion-icon name="book-outline"></ion-icon>
+            <span>Diário</span>
+          </a>
+        </ion-col>
+
+        <ion-col size="12" size-md="4">
+          <a routerLink="/desafios" class="action-card">
+            <ion-icon name="trophy-outline"></ion-icon>
+            <span>Desafios de Bem-Estar</span>
+          </a>
+        </ion-col>
+
+        <ion-col size="12" size-md="4">
+            <a routerLink="/suporte" class="action-card">
+            <ion-icon name="headset-outline"></ion-icon>
+            <span>Suporte 24h</span>
+          </a>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="hero-section">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-md="8" size-lg="6" class="ion-text-center">
+          <h1 class="hero-title">Seu espaço seguro para o bem-estar mental.</h1>
+          <p class="hero-subtitle">
+            Monitore seu humor, registre seus pensamentos e encontre o caminho para uma mente mais tranquila.
+          </p>
+          <a routerLink="/cadastro"><ion-button shape="round" size="large" class="hero-cta-button">
+            Comece sua jornada agora
+            <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+          </ion-button></a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="features-section">
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <h2 class="section-title">Ferramentas para sua jornada</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center ion-align-items-stretch">
+        <ion-col size="12" size-md="4">
+          <ion-card class="feature-card">
+            <ion-card-header>
+              <ion-icon name="happy-outline" color="primary" class="feature-icon"></ion-icon>
+              <ion-card-title>Diário de Humor</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Registre como você se sente ao longo do dia com apenas alguns toques.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12" size-md="4">
+          <ion-card class="feature-card">
+            <ion-card-header>
+              <ion-icon name="document-text-outline" color="primary" class="feature-icon"></ion-icon>
+              <ion-card-title>Registros Guiados</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Use nosso espaço para escrever sobre seu dia, suas vitórias e seus desafios.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12" size-md="4">
+          <ion-card class="feature-card">
+            <ion-card-header>
+              <ion-icon name="stats-chart-outline" color="primary" class="feature-icon"></ion-icon>
+              <ion-card-title>Insights e Padrões</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Entenda as conexões entre suas atividades e seu humor através de gráficos simples.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="quote-section">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-md="10" class="ion-text-center">
+          <p class="quote-text">"A jornada para a paz interior começa com um único passo. Estamos aqui para caminhar
+            com
+            você."</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar class="footer-toolbar">
+      <div class="footer-content">
+        <p>© 2025 Synapso. Todos os direitos reservados.</p>
+
+        <div class="footer-links">
+          <a routerLink="/termos-de-uso">Termos de Uso</a>
+          <a routerLink="/politica-privacidade">Política de Privacidade</a>
+          <a routerLink="/sobre-nos">Sobre Nós</a>
+        </div>
+
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

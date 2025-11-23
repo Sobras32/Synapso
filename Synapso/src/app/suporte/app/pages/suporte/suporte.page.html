@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar class="header-toolbar">
+
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" color=""></ion-back-button>
+      </ion-buttons>
+
+      <ion-title class="header-title">
+        Synapso
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header-greeting">
+    <h2>Um espaço para você</h2>
+    <p>Use estas ferramentas para encontrar um momento de calma.</p>
+  </div>
+
+  <div class="emergency-cta">
+    <ion-button expand="block" (click)="abrirModalEmergencia()" fill="solid">
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      Preciso de Ajuda Urgente
+    </ion-button>
+  </div>
+
+  <div class="tools-grid">
+    <ion-label class="grid-title">Ferramentas Rápidas</ion-label>
+
+    <button class="tool-button" (click)="abrirModalRespiracao()">
+      <div class="tool-icon" id="respira-icon">
+        <img src="assets/icon/respiracao.png" class="tool-img" alt="Respiração">
+      </div>
+      <ion-label>Respiração Guiada</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+
+    <button class="tool-button" (click)="abrirModalAncoragem()">
+      <div class="tool-icon" id="ancora-icon">
+        <img src="assets/icon/pensando.png" class="tool-img" alt="Técnica">
+      </div>
+      <ion-label>Técnica <br>5-4-3-2-1</ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
+    </button>
+  </div>
+
+  <div class="plan-section">
+    <ion-icon name="shield-checkmark-outline" class="plano-titulo"></ion-icon>
+    <h3>Seu Plano de Cuidado Pessoal</h3>
+    <p>Acesse ou crie seu plano para momentos difíceis.</p>
+
+    <ion-button fill="outline" (click)="abrirModalPlano()">
+      <ion-icon slot="start" [name]="meuPlano ? 'eye-outline' : 'add-outline'" class="plano"></ion-icon>
+      {{ meuPlano ? 'Ver Meu Plano' : 'Criar Meu Plano' }}
+    </ion-button>
+  </div>
+
+</ion-content>
